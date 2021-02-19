@@ -41,6 +41,7 @@ blocks:
           - 'docker pull $DOCKER_USERNAME/dockerizing-ruby-drkiq:latest || true'
           - 'docker-compose run drkiq rake db:reset'
           - 'docker-compose run drkiq rake db:migrate'
+          - 'docker-compose run drkiq rails db:test:prepare'
       jobs:
         - name: Rails test
           commands:
